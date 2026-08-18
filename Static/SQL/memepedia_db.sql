@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS memepedia_db;
+USE memepedia_db;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL UNIQUE,
+    telefono VARCHAR(20) NOT NULL,
+    fecha_nac DATE NOT NULL,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

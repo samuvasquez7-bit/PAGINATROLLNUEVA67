@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - MemePedia</title>
+    <!-- Ruta corregida para Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+
+    <!-- NAVBAR ACTUALIZADO -->
+    <nav class="navbar">
+        <!-- Enlaces corregidos para Flask -->
+        <a href="{{ url_for('index') }}" class="logo">MemePedia 2010</a>
+        <div class="links">
+            <a href="{{ url_for('index') }}">Historia</a>
+            <a href="{{ url_for('registro') }}">Registro</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="content">
+            <h1 class="title-animado">Únete a la Resistencia Troll</h1>
+            <p style="text-align: center;">Regístrate para ver los memes más exclusivos. Tu información está "segura" con nosotros. ( ͡° ͜ʖ ͡°)</p>
+
+            <!-- FORMULARIO DE REGISTRO -->
+            <div class="retro-form-container">
+                <h2>Formulario de Inscripción</h2>
+                <!-- Acción del form apuntando a la ruta de Flask -->
+                <form action="{{ url_for('registro') }}" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre / Nickname:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: xX_TrollMaster_Xx" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="tu_correo@hotmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Número de Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 555-1234" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_nac">Fecha de Nacimiento:</label>
+                        <input type="date" id="fecha_nac" name="fecha_nac" required>
+                    </div>
+
+                    <button type="submit" class="btn-retro">¡Registrarme!</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- BARRA LATERAL (Mantenemos los banners de 88x31) -->
+        <aside class="sidebar">
+            <h3>Sitios Amigos</h3>
+            <img src="https://cyber.dabamos.de/88x31/neocities.gif" alt="Neocities" class="badge">
+            <img src="https://cyber.dabamos.de/88x31/winrar.gif" alt="WinRAR" class="badge">
+            <img src="https://cyber.dabamos.de/88x31/internetarchive.gif" alt="Archive" class="badge">
+            <p style="color: white; font-size: 12px; text-align: center; margin-top: 20px;">
+                Optimizado para Internet Explorer 6 <br> 800x600 px
+            </p>
+        </aside>
+    </div>
+
+</body>
+</html>

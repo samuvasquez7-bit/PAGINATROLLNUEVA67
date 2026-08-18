@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Rage Comics</title>
+    <!-- Ruta corregida para Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <!-- Enlaces corregidos para Flask -->
+        <a href="{{ url_for('index') }}" class="logo">MemePedia 2010</a>
+        <div class="links">
+            <a href="{{ url_for('index') }}">Historia</a>
+            <a href="{{ url_for('registro') }}">Registrarse</a>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container">
+        
+        <!-- CONTENIDO CENTRAL -->
+        <main class="content">
+            <!-- La etiqueta marquee está obsoleta pero es VITAL para la experiencia retro -->
+            <marquee scrollamount="10" style="color: red; font-size: 1.5rem; font-weight: bold;">
+                ¡Bienvenidos a la época dorada de internet! U mad bro?
+            </marquee>
+
+            <h1 class="title-animado">La Historia de los Memes Antiguos</h1>
+            <p>Antes de TikTok y los videos cortos, internet era dominado por caras mal dibujadas en MS Paint. Los llamábamos <strong>Rage Comics</strong>.</p>
+
+            <div class="meme-card">
+                <!-- Rutas de imágenes corregidas para Flask -->
+                <img src="{{ url_for('static', filename='IMG/TROLLFACE.png') }}" alt="Trollface">
+                <h2>Trollface (2008)</h2>
+                <p>Creado por Carlos Ramirez (Whynne) en DeviantArt. Representaba la cara de un troll de internet sonriendo con malicia tras provocar a alguien. Su frase icónica: <em>"Problem?"</em>.</p>
+                <div class="clear"></div>
+            </div>
+
+            <div class="meme-card">
+                <!-- Rutas de imágenes corregidas para Flask -->
+                <img src="{{ url_for('static', filename='IMG/FOREVERALONE.png') }}" alt="Forever Alone">
+                <h2>Forever Alone (2010)</h2>
+                <p>El rostro de la soledad y la friendzone. Apareció por primera vez en 4chan y se usaba para contar anécdotas tristes y patéticas con un giro humorístico. Nunca pasará de moda (en nuestros corazones solitarios).</p>
+                <div class="clear"></div>
+            </div>
+        </main>
+
+        <!-- BARRA LATERAL ESTILO RETRO -->
+        <aside class="sidebar">
+            <h3>Sitios Amigos</h3>
+            <!-- Aquí van las imágenes estilo 88x31 como la referencia que me pasaste -->
+            <img src="https://cyber.dabamos.de/88x31/neocities.gif" alt="Neocities" class="badge">
+            <img src="https://cyber.dabamos.de/88x31/winrar.gif" alt="WinRAR" class="badge">
+            <img src="https://cyber.dabamos.de/88x31/internetarchive.gif" alt="Archive" class="badge">
+            <p style="color: white; font-size: 12px; text-align: center; margin-top: 20px;">
+                Optimizado para Internet Explorer 6 <br> 800x600 px
+            </p>
+        </aside>
+
+    </div>
+
+</body>
+</html>

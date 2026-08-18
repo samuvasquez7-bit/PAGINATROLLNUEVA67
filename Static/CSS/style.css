@@ -1,0 +1,230 @@
+/* =========================================
+   RESET Y VARIABLES MÁGICAS (Toque Moderno)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fondo gris clásico de foros antiguos */
+    background-color: #c0c0c0;
+    /* Fuente por excelencia de los memes */
+    font-family: "Comic Sans MS", "Chalkboard SE", sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================================
+   BARRA DE NAVEGACIÓN (Navbar)
+   ========================================= */
+.navbar {
+    background: linear-gradient(to bottom, #000080, #000040); /* Azul Windows 98 */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra moderna */
+}
+
+.navbar .logo {
+    color: yellow;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #ff0000, 4px 4px 0px #000; /* Efecto 3D retro */
+    animation: tambalear 2s infinite ease-in-out;
+}
+
+.navbar .links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    font-weight: bold;
+    border: 2px outset #fff;
+    padding: 5px 15px;
+    background-color: #c0c0c0;
+    color: #000;
+}
+
+.navbar .links a:hover {
+    border-style: inset;
+    background-color: #e0e0e0;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL Y LAYOUT
+   ========================================= */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    gap: 20px;
+}
+
+/* Área de contenido */
+.content {
+    flex: 3;
+    background-color: #fff;
+    padding: 20px;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0px #888; /* Sombra dura estilo cómic/retro */
+}
+
+/* Barra lateral (Sidebar para botones 88x31) */
+.sidebar {
+    flex: 1;
+    background-color: #008080; /* Verde azulado clásico */
+    padding: 15px;
+    border: 3px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.badge {
+    width: 88px;
+    height: 31px;
+    border: 1px solid #fff;
+    image-rendering: pixelated; /* Mantiene los píxeles nítidos */
+}
+
+/* =========================================
+   ELEMENTOS INTERNOS Y TIPOGRAFÍA
+   ========================================= */
+h1.title-animado {
+    color: #ff00ff;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0px #00ffff;
+    animation: arcoiris 5s infinite;
+}
+
+.meme-card {
+    border: 2px dashed #ff6600;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #ffffcc;
+}
+
+.meme-card img {
+    max-width: 200px;
+    float: left;
+    margin-right: 15px;
+    border: 2px solid #000;
+}
+
+.clear {
+    clear: both;
+}
+
+/* Tablas estilo foro antiguo */
+.forum-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.forum-table th, .forum-table td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+}
+
+.forum-table th {
+    background-color: #000080;
+    color: white;
+}
+
+.forum-table tr:nth-child(even) {
+    background-color: #e6e6e6;
+}
+
+/* =========================================
+   ANIMACIONES DIVERTIDAS
+   ========================================= */
+@keyframes tambalear {
+    0%, 100% { transform: rotate(-5deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.1); }
+}
+
+@keyframes arcoiris {
+    0% { color: red; text-shadow: 2px 2px 0px blue; }
+    33% { color: lime; text-shadow: 2px 2px 0px red; }
+    66% { color: blue; text-shadow: 2px 2px 0px lime; }
+    100% { color: red; text-shadow: 2px 2px 0px blue; }
+}
+
+/* =========================================
+   FORMULARIO RETRO (Estilo Windows 98 / Web 1.0)
+   ========================================= */
+.retro-form-container {
+    background-color: #c0c0c0;
+    border: 4px outset #ffffff;
+    padding: 25px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 0px #000;
+}
+
+.retro-form-container h2 {
+    text-align: center;
+    background-color: #000080; /* Azul clásico de barra de título */
+    color: white;
+    padding: 5px;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border: 2px inset #ffffff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 3px inset #ffffff;
+    font-family: "Comic Sans MS", "Chalkboard SE", sans-serif;
+    background-color: #ffffff;
+    font-size: 1rem;
+}
+
+/* El botón clásico y tosco */
+.btn-retro {
+    background-color: #c0c0c0;
+    border: 4px outset #ffffff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: "Comic Sans MS", sans-serif;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-retro:active {
+    border: 4px inset #ffffff; /* Efecto de click hundido */
+    background-color: #a0a0a0;
+}
