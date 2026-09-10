@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - MemePedia</title>
-    <!-- Ruta corregida para Flask -->
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
 </head>
 <body>
 
-    <!-- NAVBAR ACTUALIZADO -->
     <nav class="navbar">
-        <!-- Enlaces corregidos para Flask -->
         <a href="{{ url_for('index') }}" class="logo">MemePedia 2010</a>
         <div class="links">
             <a href="{{ url_for('index') }}">Historia</a>
-            <a href="{{ url_for('registro') }}">Registro</a>
+            {% if session.get('rol') == 'admin' %}
+                <a href="{{ url_for('admin_panel') }}" style="background-color: yellow;">Panel Admin</a>
+            {% endif %}
+            {% if session.get('user_id') %}
+                <a href="{{ url_for('logout') }}">Salir</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Ingresar</a>
+                <a href="{{ url_for('registro') }}">Registro</a>
+            {% endif %}
         </div>
     </nav>
 
@@ -24,10 +29,8 @@
             <h1 class="title-animado">Únete a la Resistencia Troll</h1>
             <p style="text-align: center;">Regístrate para ver los memes más exclusivos. Tu información está "segura" con nosotros. ( ͡° ͜ʖ ͡°)</p>
 
-            <!-- FORMULARIO DE REGISTRO -->
             <div class="retro-form-container">
                 <h2>Formulario de Inscripción</h2>
-                <!-- Acción del form apuntando a la ruta de Flask -->
                 <form action="{{ url_for('registro') }}" method="POST">
                     
                     <div class="form-group">
@@ -55,7 +58,6 @@
             </div>
         </main>
 
-        <!-- BARRA LATERAL (Mantenemos los banners de 88x31) -->
         <aside class="sidebar">
             <h3>Sitios Amigos</h3>
             <img src="https://cyber.dabamos.de/88x31/neocities.gif" alt="Neocities" class="badge">
@@ -65,6 +67,13 @@
                 Optimizado para Internet Explorer 6 <br> 800x600 px
             </p>
         </aside>
+    </div>
+
+    <div class="audio-player">
+        <audio autoplay loop controls playsinline>
+            <source src="../static/mp3/Pixel Peeker Polka - faster.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio HTML5.
+        </audio>
     </div>
 
 </body>

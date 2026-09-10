@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario - Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <main class="content">
+            <div class="retro-form-container">
+                <h2>Editar Usuario #{{ usuario.id }}</h2>
+                <form action="{{ url_for('editar_usuario', id=usuario.id) }}" method="POST">
+                    
+                    <div class="form-group">
+                        <label>Nombre / Nickname:</label>
+                        <input type="text" name="nombre" value="{{ usuario.nombre }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" name="correo" value="{{ usuario.correo }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="text" name="telefono" value="{{ usuario.telefono }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rol de Usuario:</label>
+                        <select name="rol" style="width: 100%; padding: 8px; font-family: 'Comic Sans MS', sans-serif;">
+                            <option value="usuario" {% if usuario.rol == 'usuario' %}selected{% endif %}>usuario</option>
+                            <option value="admin" {% if usuario.rol == 'admin' %}selected{% endif %}>admin</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-retro">Guardar Cambios</button>
+                    <a href="{{ url_for('admin_panel') }}" style="display:block; text-align:center; margin-top:15px; color: black; font-weight: bold;">Cancelar</a>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

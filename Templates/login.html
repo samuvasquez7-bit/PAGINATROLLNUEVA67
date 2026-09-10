@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar - MemePedia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="logo">MemePedia 2010</a>
+        <div class="links">
+            <a href="{{ url_for('index') }}">Historia</a>
+            <a href="{{ url_for('registro') }}">Registro</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="content">
+            <div class="retro-form-container">
+                <h2>Iniciar Sesión</h2>
+                
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    <div style="background-color: #ffcccc; color: red; border: 2px solid red; padding: 5px; margin-bottom: 10px; text-align: center;">
+                      {{ messages[0] }}
+                    </div>
+                  {% endif %}
+                {% endwith %}
+
+                <form action="{{ url_for('login') }}" method="POST">
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico Registrado:</label>
+                        <input type="email" id="correo" name="correo" placeholder="tu_correo@hotmail.com" required>
+                    </div>
+                    <button type="submit" class="btn-retro">Ingresar</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <div class="audio-player">
+        <audio autoplay loop controls playsinline>
+            <source src="../static/mp3/Pixel Peeker Polka - faster.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio HTML5.
+        </audio>
+    </div>
+
+</body>
+</html>

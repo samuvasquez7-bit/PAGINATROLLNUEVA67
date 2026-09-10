@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - MemePedia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="logo">MemePedia Admin</a>
+        <div class="links">
+            <a href="{{ url_for('index') }}">Ver Sitio</a>
+            <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="content">
+            <h1 class="title-animado">Panel de Administrador</h1>
+            <p style="text-align: center;">Bienvenido, <strong>{{ session.get('nombre') }}</strong> | Rol: <strong>{{ session.get('rol') }}</strong></p>
+            
+            <table class="forum-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in usuarios %}
+                    <tr>
+                        <td>{{ u.id }}</td>
+                        <td>{{ u.nombre }}</td>
+                        <td>{{ u.correo }}</td>
+                        <td>{{ u.telefono }}</td>
+                        <td><strong>{{ u.rol }}</strong></td>
+                        <td>
+                            <a href="{{ url_for('editar_usuario', id=u.id) }}" style="color: blue; font-weight: bold;">[Editar]</a>
+                            <a href="{{ url_for('eliminar_usuario', id=u.id) }}" onclick="return confirm('¿Seguro que deseas borrar este usuario?');" style="color: red; font-weight: bold;">[Borrar]</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+</body>
+</html>
